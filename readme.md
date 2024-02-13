@@ -1,52 +1,21 @@
 # What is EducationHub?
 
-Its is a simple CLI application I made during the Intern phase, I have used postgres to store the user's (student in this case) data. To run this please makesure you have postgres installed.
+Its is a simple CLI application which is the updated form of [EducationHub_postgres](https://github.com/Rohanpudasaini/EducationHub_postgres) , I have used postgres to store the user's (student in this case) data, and added SQLAlchemy as an ORM to handel database releated works. To run this please makesure you have postgres installed.
 You can follow a guide online.
-Makse sure you have created a DB folder and makesure to add following file inside.
+**Make sure you have created a `.env` file which will consist of your databse's information as below.**
 
-1. ### config.py
+1. ## .env
 
-   ```python
-    from configparser import ConfigParser
-
-    def load_config(filename='DB/database.ini', section='postgresql'):
-        parser = ConfigParser()
-        parser.read(filename)
-
-        config = {}
-        if parser.has_section(section):
-            params = parser.items(section)
-            for param in params:
-                config[param[0]] = param[1]
-        else:
-            raise Exception(f'Section {section} not found in the {filename} file')
-
-        return config
-
-    if __name__ == '__main__':
-        config = load_config() 
+   ```ini
+        host=host_location(generally localhost)
+        database=postgres_databasename
+        user=postgres_username
+        password=your_password
     ```
 
-2. ### databse.ini
-
-```ini
-    [postgresql]
-    host=localhost
-    database=db_name
-    user=postgres
-    password=password
-```
-
-Dont forget to change the values in the `databse.ini` with your credentials.
+Dont forget to change the values in the `.env` with your database's informations.
 
 Now to run the app simply run
-
-```bash
-python3 Educationhub.py
-```
-
-# TO_Do
-
-1. Add option to add and remove academy [x]
-2. Cleaning and simple housekeeping [x]
-3. Error handeling [x]
+`pip install sqlalchemy`
+and finally, do
+`python3 Educationhub.py`
