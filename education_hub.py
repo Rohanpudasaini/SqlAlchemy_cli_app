@@ -101,8 +101,9 @@ def show_university():
     for key, values in all_academy.items():
         print("_"*80)
         academy_id_to_show = (values['academy_id'])
-        
-        print_colored_message(f"{key}\t\t\t\t Academy Name: {academy_info[academy_id_to_show]}", Colors.YELLOW)
+
+        print_colored_message(
+            f"{key}\t\t\t\t Academy Name: {academy_info[academy_id_to_show]}", Colors.YELLOW)
         # print_colored_message(f"", Colors.YELLOW)
         print("_"*80)
         # print(values)

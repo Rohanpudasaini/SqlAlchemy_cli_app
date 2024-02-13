@@ -11,11 +11,10 @@ user = os.getenv('user')
 password = os.getenv('password')
 
 
-
 url = URL.create(
     database=database,
     username=user,
-    password= password,
+    password=password,
     host=host,
     drivername="postgresql"
 )
@@ -32,4 +31,3 @@ combined_Database_Class = Base.classes.student_course
 Students_Database_Class = Base.classes.students
 Courses_Database_Class = Base.classes.courses
 Academies_Database_Class = Base.classes.academies
-
