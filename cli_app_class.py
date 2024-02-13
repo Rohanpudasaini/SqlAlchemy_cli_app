@@ -61,7 +61,8 @@ class Student:
             fee = cls.get_remaining_payment(roll_num_to_fee)
             if fee < 0:
                 fee = str(
-                    fee * -1) + " Overpaid, please check accounts for refund or enroll to any other course."
+                    fee * -1) + " Overpaid, please check accounts for refund \
+                        or enroll to any other course."
             else:
                 fee = str(fee) + " Remaning, please pay the fee at time"
             print(fee)
@@ -97,7 +98,8 @@ class Student:
                 cls.update_total_price(roll_number_to_join)
             else:
                 print_colored_message(
-                    f"The User with roll number {roll_number_to_join} is already enrolled into {course_id_to_add} course",
+                    f"The User with roll number {roll_number_to_join} \
+                        is already enrolled into {course_id_to_add} course",
                     Colors.RED)
         else:
             print_colored_message("No Such Course ID", Colors.RED)
@@ -157,11 +159,13 @@ class Student:
             remaning = Student.get_remaining_payment(int(key))
             if remaning > 0:
                 print_colored_message(
-                    f"\t\tThe Student {values['first_name']} have {remaning} fee, please check whith him/her once", Colors.RED)
+                    f"\t\tThe Student {values['first_name']} have {remaning} fee\
+                        , please check whith him/her once", Colors.RED)
             if remaning < 0:
                 remaning = remaning * -1
                 print_colored_message(
-                    f"\t\tThe Student {values['first_name']} {values['last_name']} have {remaning} fee over charged, please check whith him/her once",
+                    f"\t\tThe Student {values['first_name']} {values['last_name']} \
+                        have {remaning} fee over charged, please check whith him/her once",
                     Colors.GREEN)
         input("\n\nContinue ....")
 
